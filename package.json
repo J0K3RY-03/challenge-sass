@@ -1,0 +1,23 @@
+{
+  "name": "challenge-sass",
+  "version": "1.0.0",
+  "description": "first challenge SASS",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass -w -o scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J0K3RY-03/challenge-sass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J0K3RY-03/challenge-sass/issues"
+  },
+  "homepage": "https://github.com/J0K3RY-03/challenge-sass#readme",
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}

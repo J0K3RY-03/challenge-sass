@@ -1,0 +1,119 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+body {
+    font: 100% "Space Mono", monospace;
+    color: $colorLightBlue;
+    margin: 0;
+    padding: 0;
+    background-color: $colorWithe;
+    overflow-x: hidden;
+}
+
+main {
+    padding: $paddingZero $paddingOneEm;
+}
+
+article {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    section {
+        flex-grow: 1;
+        flex-basis: 45%;
+        border: 1px $colorLightGrey solid;
+        @include webk-box-shadow(10px, 10px, 15px -4px, $colorLightBlue);
+        @include moz-box-shadow(0px, 10px, 15px -4px, $colorLightBlue);
+        @include box-shadow(10px, 10px, 15px -4px, $colorLightBlue);
+        padding: $paddingOneEm;
+        margin: 16px;
+        clear: both;
+        overflow: auto;
+        box-sizing: border-box;
+
+        #selling-points {
+            flex-grow: 2;
+            flex-basis: 100%;
+        }
+    }
+
+    code {
+        background: #000;
+        border: 1px solid $colorLightBlue;
+        color: $colorLightGrey;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: $paddingOneEm ($paddingOneEm * 1.5);
+        display: block;
+        word-wrap: break-word;
+
+        .before {
+            float: left;
+            width: 40%;
+        }
+
+        .after {
+            float: right;
+            width: 40%;
+        }
+    }
+}
+
+.messages {
+    padding: $paddingOneEm;
+
+    %colorMessage {
+        border: 1px solid $colorLightGrey;
+        padding: $paddingOneEm;
+        color: $colorWithe;
+    }  
+
+    .success {
+        @extend %colorMessage;
+        background-color: $bgColorSucces;
+    }
+    
+    .error {
+        @extend %colorMessage;
+        background-color: $bgColorError;
+        &:hover {
+            background: $bgColorSucces
+        }
+    }
+    
+    .warning {
+        @extend %colorMessage;
+        background-color: $bgColorWarning;
+    }
+}
+
+h1,
+h2,
+h3 {
+    color: $titlePink;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5em;
+    padding: $paddingOneEm * 2;
+    margin-bottom: 0px;
+}
+
+@for $i from 1 through 6 {
+    ul:nth-child(1n + #{$i}) {
+        background: -webkit-linear-gradient(0deg, #ff0000 0%, #48abe0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+    }
+  }
